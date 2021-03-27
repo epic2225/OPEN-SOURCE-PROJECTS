@@ -1,7 +1,7 @@
 --[[
 
 TODO: Make use of switch statements in lua
-SETUP: Run "require(FILE_NAME_HERE)" in your code, you wont have to set it as a value as it will be loaded into your environment
+SETUP: Run "local switch = require(FILE_NAME_HERE)" in your code
 
 SYNTAX:
 
