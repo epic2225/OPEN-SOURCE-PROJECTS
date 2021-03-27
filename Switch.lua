@@ -3,6 +3,16 @@
 TODO: Make use of switch statements in lua
 SETUP: Run "require(FILE_NAME_HERE)" in your code, you wont have to set it as a value as it will be loaded into your environment
 
+SYNTAX:
+
+require('Switch')
+
+--example code:
+local val = 5
+switch(val, {
+    [5] = function() print("Test") end
+})
+
 ]]
 
 local copy = function(i, o)
