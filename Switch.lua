@@ -16,12 +16,12 @@ local env = getfenv(1)
 
 setfenv(1, copy({switch = function(val, c)
 	local cases = {}
-    for k, v in pairs(c) do
-        if type(v) == "function" then
-            cases[k] = v
-        end
-    end
-    return cases[val]()
+	for k, v in pairs(c) do
+		if type(v) == "function" then
+			cases[k] = v
+		end
+	end
+	return cases[val]()
 end}, env))
 
 return switch
