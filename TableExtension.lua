@@ -2,7 +2,7 @@ local tbl = {}
 
 --@TODO: 
 --@PARAM: 
-function shallowCopy(t)
+function tbl.shallowCopy(t)
 	return {unpack(t)};
 end
 
@@ -27,7 +27,7 @@ end
 
 --@TODO: 
 --@PARAM: 
-function overrideIndex(t, ind, new)
+function tbl.overrideIndex(t, ind, new)
 	if type(t) ~= "table" then return end;
 	if not t[ind] ~= nil then return end;
 	
@@ -38,7 +38,7 @@ end
 
 --@TODO: 
 --@PARAM: 
-function getTableIndexes(t)
+function tbl.getTableIndexes(t)
 	local indexes = {}
 	for k, v in pairs(t) do
 		indexes[#indexes + 1] = k
@@ -48,7 +48,7 @@ end
 
 --@TODO: 
 --@PARAM: 
-function getTableValues(t)
+function tbl.getTableValues(t)
 	local values = {}
 	for k, v in pairs(t) do
 		values[#values + 1] = v
@@ -58,11 +58,17 @@ end
 
 --@TODO: Get a table index from a value
 --@PARAM: 1: "table Subject", 2: "var ObjectValue"
-function reverseIndex(t, val)
+function tbl.reverseIndex(t, val)
 	for k, v in pairs(t) do
 		if t[k] == val then
 			return k
 		end
+	end
+end
+
+function tbl.map(t, f)
+	for k, v in pairs(t) do
+		f(k, v, t);
 	end
 end
 
