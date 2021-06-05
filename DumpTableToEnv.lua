@@ -7,9 +7,10 @@ Written by cfgtsp
 ]]
 
 return function(tbl, env)
-	local env = getfenv(env) or getfenv(1)
+	local env = (type(env) == "number" and env) or (type(env) == "string" and tostring(env)) or 1
+	local Env = getfenv(env)
 	
 	for k, v in pairs(tbl) do
-		env[k] = v
+		Env[k] = v
 	end
 end
